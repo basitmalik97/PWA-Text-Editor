@@ -1,144 +1,113 @@
-# 19 Progressive Web Applications (PWA): Text Editor
+# Progressive Web Applications (PWA): Text Editor
 
-## Your Task
+* This text editor require a number of methods and store data to an IndexedDB database to be builded up.
 
-As you have progressed through this course, you have put together a number of impressive projects that you can show off to potential employers. This project is no exception; in fact, it features some of the most impressive expressions of the concepts you have learned so far.
+* This application will require the installation of Node.js and various npm packages.
 
-Your task is to build a text editor that runs in the browser. The app will be a single-page application that meets the PWA criteria. Additionally, it will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.
+*   Node Package Manager (npm) is a software manager and installer which puts the modules in place so that the node project can utilize it, and also, it manages dependency conflicts intelligently and initialized using **npm init**. The package.json will be generated and will contains all the details of the application in which the user have inputted during the npm initialization. 
 
-To build this text editor, you will start with an existing application and implement methods for getting and storing data to an IndexedDB database. You will use a package called `idb`, which is a lightweight wrapper around the IndexedDB API. It features a number of methods that are useful for storing and retrieving data, and is used by companies like Google and Mozilla.
+*  This application will use the following npm packages:-
 
-You will deploy this full-stack application to Render using the [Render Deployment Guide on The Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/render/render-deployment-guide).
+         * npm install express (express.js)
+         * npm install --save-dev webpack (Webpack)
+         * npm install webpack-dev-server --save-dev (webpack-dev-server)
+         * npm install --save-dev webpack-pwa-manifest (WebpackPwaManifest)
+         * npm install babel (Babel)
+         * npm install --save-dev css-loader (CSS-loader)
+         * npm install concurrently --save (run multiple commands concurrently.) (Concurrently)
+         * npm npm install idb (IndexedDB)
 
-**Important**: Make sure your submission includes the `.npmrc` file in this starter code.  This will ensure your application will deploy properly to Render.
+* The required modules are bundled in the package.json file and at CLI or integrated terminal type in **npm run install**, the modules will be installed.       
 
-## User Story
+## Usage
 
-```md
-AS A developer
-I WANT to create notes or code snippets with or without an internet connection
-SO THAT I can reliably retrieve them for later use
-```
-
-## Acceptance Criteria
-
-```md
-GIVEN a text editor web application
+1.
+``````    
+GIVEN a text editor web application, 
 WHEN I open my application in my editor
 THEN I should see a client server folder structure
-WHEN I run `npm run start` from the root directory
-THEN I find that my application should start up the backend and serve the client
-WHEN I run the text editor application from my terminal
-THEN I find that my JavaScript files have been bundled using webpack
-WHEN I run my webpack plugins
-THEN I find that I have a generated HTML file, service worker, and a manifest file
+``````
+*Below is the screenshot of the client server folder structure.  The folder structure have been set up or given in this structure.*
+
+![alt text](/assets/images/TE07.png)
+
+
+2.
+``````
+    WHEN I run `npm run start` from the root directory
+    THEN I find that my application should start up the backend and serve the client
+    WHEN I run the text editor application from my terminal
+    THEN I find that my JavaScript files have been bundled using webpack
+    WHEN I run my webpack plugins
+    THEN I find that I have a generated HTML file, service worker, and a manifest file
+``````
+*Below is the screenshot of the running at npm run start and npm run build* 
+
+![alt text](/assets/images/TE02.png)
+
+*Below is the screenshot of the generated HTML, service worker and a manifest file*
+
+![alt text](/assets/images/TE08.png)
+
+3.
+``````
 WHEN I use next-gen JavaScript in my application
 THEN I find that the text editor still functions in the browser without errors
 WHEN I open the text editor
+``````
+*Below is the screenshot of the text editor "Just Another Text Editor (J.A.T.E)"*
+
+![alt text](/assets/images/TE03.png)
+
+4.
+``````
 THEN I find that IndexedDB has immediately created a database storage
 WHEN I enter content and subsequently click off of the DOM window
 THEN I find that the content in the text editor has been saved with IndexedDB
 WHEN I reopen the text editor after closing it
 THEN I find that the content in the text editor has been retrieved from our IndexedDB
+``````
+*Below is the  screenshot of content in the text editor has been retrieved from the IndexedDB"*
+
+![alt text](/assets/images/TE05.png)
+
+5.
+``````
 WHEN I click on the Install button
 THEN I download my web application as an icon on my desktop
+``````
+*Below is the screenshot of icon on the desktop"*
+
+![alt text](/assets/images/TE04.png)
+
+6.
+``````
 WHEN I load my web application
 THEN I should have a registered service worker using workbox
 WHEN I register a service worker
 THEN I should have my static assets pre cached upon loading along with subsequent pages and static assets
-WHEN I deploy to Render
-THEN I should have proper build scripts for a webpack application
-```
+``````
+*Below is the screenshot of the static assets pre cached upon loading with subsequent pages and static assets"*
 
-## Mock-Up
+![alt text](/assets/images/TE09.png)
 
-The following animation demonstrates the application functionality:
+![alt text](/assets/images/TE10.png)
 
-![Demonstration of the finished Module 19 Challenge being used in the browser and then installed.](./Assets/00-demo.gif)
+7.
 
-The following image shows the application's `manifest.json` file:
+ ````````
+WHEN I deploy to Heroku
+THEN I should have proper build scripts for a webpack application 
+````````
+![alt text](/assets/images/TE11.png)
 
-![Demonstration of the finished Module 19 Challenge with a manifest file in the browser.](./Assets/01-manifest.png)
 
-The following image shows the application's registered service worker:
+## References
 
-![Demonstration of the finished Module 19 Challenge with a registered service worker in the browser.](./Assets/02-service-worker.png)
+*   The Unit Ahead : Progressive Web Applications (PWA)
+*   Module 19 Mini-Project: Deploy Contact Directory App on Heroku with Script
+*   Request-Response : The Full-Stack Blog : Heroku Deployment Guide
+ 
+## License
 
-The following image shows the application's IndexedDB storage:
-
-![Demonstration of the finished Module 19 Challenge with a IndexedDB storage named 'jate' in the browser.](./Assets/03-idb-storage.png)
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-  * Uses IndexedDB to create an object store and includes both GET and PUT methods
-
-  * The application works without an internet connection
-
-  * Automatically saves content inside the text editor when the DOM window is unfocused
-
-  * Bundled with webpack
-
-  * Create a service worker with workbox that Caches static assets
-
-  * The application should use babel in order to use async / await
-
-  * Application must have a generated `manifest.json` using the `WebpackPwaManifest` plug-in
-
-  * Can be installed as a Progressive Web Application
-
-### Deployment: 32%
-
-* Application deployed to Render at live URL with build scripts
-
-* Application loads with no errors
-
-* Application GitHub URL submitted
-
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the Challenge instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+This project is licensed under the terms of the MIT license.
