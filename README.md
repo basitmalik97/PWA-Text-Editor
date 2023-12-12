@@ -1,4 +1,4 @@
-# Progressive Web Applications (PWA): Text Editor
+
 
 * This text editor require a number of methods and store data to an IndexedDB database to be builded up.
 
